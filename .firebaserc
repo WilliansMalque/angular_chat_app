@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "chatview-bfcf7": {
+      "hosting": {
+        "chat-app": [
+          "chatview-bfcf7"
+        ]
+      }
+    }
+  }
+}

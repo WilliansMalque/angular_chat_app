@@ -1,0 +1,155 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+aside {
+    width: 250px;
+    height: 100%;
+    background-color: #292b33;
+    display: inline-block;
+    font-size: 15px;
+    vertical-align: top;
+}
+
+main {
+    width: 490px;
+    height: 800px;
+    display: inline-block;
+    font-size: 15px;
+    vertical-align: top;
+}
+
+aside header {
+    padding: 30px 20px;
+}
+
+aside input {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 50px 0 20px;
+    background-color: #5e616a;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_search.png);
+    background-repeat: no-repeat;
+    background-position: 170px;
+    background-size: 40px;
+}
+
+aside input::placeholder {
+    color: #fff;
+}
+
+aside ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    overflow-y: scroll;
+    height: 690px;
+}
+
+aside li {
+    padding: 10px 0;
+}
+
+aside li:hover {
+    background-color: #5e616a;
+}
+
+h2,
+h3 {
+    margin: 0;
+}
+
+aside li img {
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 8px;
+}
+
+aside li div {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 12px;
+}
+
+aside li h2 {
+    font-size: 14px;
+    color: #fff;
+    font-weight: normal;
+}
+
+aside li h3 {
+    font-size: 12px;
+    color: #7e818a;
+    font-weight: normal;
+}
+
+.status {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.green {
+    background-color: #58b666;
+}
+
+.orange {
+    background-color: #ff725d;
+}
+
+.blue {
+    background-color: #6fbced;
+    margin-right: 0;
+    margin-left: 7px;
+}
+
+aside footer {
+    color: white;
+    text-align: left;
+}
+
+/* Estilo personalizado para mat-toolbar con escala de grises */
+mat-toolbar.example-toolbar {
+    background-color: #2c2f38; /* Gris oscuro */
+    color: #ffffff; /* Texto blanco */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
+  }
+  
+  mat-toolbar-row {
+    display: flex;
+    align-items: center;
+  }
+  
+  mat-toolbar-row button {
+    color: #ffffff; /* Botones de icono en blanco */
+  }
+  
+  mat-toolbar-row b {
+    font-size: 18px;
+    color: #ffffff; /* Título blanco */
+  }
+  
+  mat-toolbar-row h3 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #cccccc; /* Texto gris claro */
+  }
+  
+  button[mat-icon-button] mat-icon {
+    color: #ffffff; /* Iconos blancos */
+  }
+  
+  button[mat-icon-button]:hover mat-icon {
+    color: #cccccc; /* Icono gris claro al hover */
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  

@@ -1,0 +1,91 @@
+<div *ngIf="!chatService.usuarioPara; else chatTemplate" id="container">
+    <h1 class="text-center text-danger">No hay ningun chat activo</h1>
+</div>
+<ng-template #chatTemplate>
+
+    <div id="container">
+        <main>
+            <header>
+                <img src="../../assets/usuario.png" alt="">
+                <div>
+                    <h2>Chat with {{chatService.usuarioPara.nombre }}</h2>
+                    <h3>already {{chatService.mensajes.length}} messages</h3>
+
+                </div>
+            </header>
+            <ul id="chat" #scrollframe>
+                <li class="" *ngFor="let mensaje of chatService.mensajes" #item [ngClass]="{'you': mensaje.de !== usuarioId, 'me': mensaje.de === usuarioId}">
+                    <div class="entete" *ngIf=" mensaje.de !== usuarioId ">
+                        <span class="status green"></span>
+                        <h2>{{ chatService.usuarioPara.nombre }}</h2>
+                        <h3 class="pl-1">-- {{ mensaje.createdAt | date: 'medium'}}</h3>
+                    </div>
+
+                    <div class="entete" *ngIf=" mensaje.de === usuarioId ">
+                        <h3 class="pr-1"> {{ mensaje.createdAt | date: 'medium'}} --</h3>
+                        <h2>{{ authService.usuario.nombre }}</h2>
+                        <span class="status blue"></span>
+                    </div>
+                    <div class="triangle"></div>
+                    <div class="message">
+                        {{mensaje.mensaje}}
+                    </div>
+                </li>
+            </ul>
+
+            <div class="row align-items-center">
+
+                <footer>
+
+                    <textarea #message (keydown)="triggerFunction($event)" [(ngModel)]="messageToSend" placeholder="Type your message" autofocus></textarea>
+                </footer>
+                <button (click)="send()" [disabled]="messageToSend.length === 0 || messageToSend.charAt(0) === ' '" mat-fab color="accent" aria-label="Example icon button with a delete icon">
+              <mat-icon>send</mat-icon>
+            </button>
+            </div>
+        </main>
+
+    </div>
+
+
+</ng-template>
+
+<!-- <div class="container">
+        <h3 class=" text-center">{{chatService.usuarioPara.nombre}}</h3>
+        <div class="messaging">
+            <div class="inbox_msg">
+                <div class="mesgs">
+                    <div class="msg_history">
+                        <div class="incoming_msg mt-3" [ngClass]="{'outgoing_msg': mensaje.mensaje === 'entra'}" *ngFor="let mensaje of mensajes">
+                            <div *ngIf="mensaje.mensaje !== 'entra'" class="incoming_msg_img">
+                                <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+                            </div>
+                            <div class="received_msg" [ngClass]="{'sent_msg': mensaje.mensaje === 'entra'}">
+                                <div class="received_withd_msg">
+                                    <p>{{mensaje.mensaje}}
+                                    </p>
+                                    <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="type_msg">
+                        <div class="input_msg_write">
+                            <input type="text" class="write_msg" [(ngModel)]="mensajeE" placeholder="Type a message" />
+                            <button (click)="agregarMensaje(mensajeE)" class="msg_send_btn" type="button">
+                              <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
+
+        </div>
+    </div> -->
+
+
+
+<!-- </div> -->

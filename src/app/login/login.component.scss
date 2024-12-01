@@ -1,0 +1,99 @@
+/* Fondo del login */
+.bg-login {
+    background: linear-gradient(145deg, #1e1e1e, #3c3c3c); /* Escala de grises */
+    background-size: cover;
+  }
+  
+  /* Estilo de la tarjeta */
+  .card-login {
+    border-radius: 20px;
+    background: #ffffff; /* Fondo blanco */
+    color: #333333; /* Texto oscuro para contraste */
+    padding: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde gris claro */
+  }
+  
+  /* Botón personalizado */
+  .btn-custom {
+    background: linear-gradient(90deg, #5a5a5a, #3c3c3c); /* Escala de grises para botón */
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  .btn-custom:hover {
+    background: linear-gradient(90deg, #3c3c3c, #1e1e1e); /* Más oscuro al hover */
+    transform: scale(1.05); /* Pequeño zoom al pasar el mouse */
+  }
+  
+  /* Textos */
+  h2, h3, h1 {
+    color: #333333; /* Texto oscuro para buena lectura sobre fondo blanco */
+  }
+  
+  h3.text-muted {
+    color: rgba(100, 100, 100, 0.8); /* Gris claro */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #5a5a5a; /* Gris vibrante */
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #3c3c3c;
+  }
+  
+  /* Inputs y labels */
+  mat-form-field {
+    color: #333333;
+  
+    .mat-form-field-label {
+      color: rgba(100, 100, 100, 0.8) !important; /* Etiqueta gris */
+    }
+  
+    input {
+      color: #333333; /* Texto oscuro */
+    }
+  
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      border-color: rgba(0, 0, 0, 0.2); /* Gris claro para los bordes */
+    }
+  
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+      border-color: #5a5a5a; /* Gris vibrante al enfoque */
+    }
+  }
+  
+  /* Checkbox */
+  .mat-checkbox .mat-checkbox-inner-container {
+    border-color: rgba(100, 100, 100, 0.7); /* Gris claro */
+  }
+  
+  .mat-checkbox .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #5a5a5a; /* Gris oscuro */
+  }
+  
+  /* Spinner */
+  ngx-spinner {
+    color: #5a5a5a; /* Gris para el spinner */
+  }
+  
+  /* Estilo para el enlace "Crea una ahora!" */
+a h1 {
+    color: #000000; /* Color negro */
+    font-weight: bold; /* Mantiene el texto en negrita */
+    font-size: 20px; /* Tamaño ajustado */
+    transition: color 0.3s ease; /* Transición suave para el hover */
+  }
+  
+  a h1:hover {
+    color: #555555; /* Gris oscuro para hover */
+  }
+  

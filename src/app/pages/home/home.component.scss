@@ -1,0 +1,203 @@
+.chat-view {
+    padding-top: 5rem;
+}
+
+#container {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+    width: 95%;
+    height: 800px;
+    background-color: #2d2d2d; /* Fondo gris oscuro */
+    margin: 0 10px;
+    font-size: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+}
+
+main {
+    width: 100%;
+    height: 800px;
+    display: inline-block;
+    font-size: 15px;
+    vertical-align: top;
+}
+
+h2,
+h3 {
+    margin: 0;
+    color: #ffffff; /* Texto blanco para contraste */
+}
+
+main header {
+    width: 100%;
+    height: 110px;
+    padding: 30px 20px 30px 40px;
+    position: sticky;
+    background-color: #1a1a1a; /* Fondo gris más oscuro */
+    border-bottom: 2px solid #3b3b3b; /* Línea divisoria */
+}
+
+main header>* {
+    display: inline-block;
+    vertical-align: top;
+}
+
+main header img:first-child {
+    border-radius: 50%;
+    border: 2px solid #3b82f6; /* Azul vibrante para destacar el avatar */
+}
+
+main header div {
+    margin-left: 10px;
+    margin-right: 145px;
+}
+
+main header h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #ffffff; /* Texto blanco */
+}
+
+main header h3 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #bbbbbb; /* Texto gris claro */
+}
+
+#chat {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    overflow-y: scroll;
+    height: 535px;
+    background-color: #242424; /* Fondo gris para el área del chat */
+    border-top: 2px solid #3b3b3b;
+    border-bottom: 2px solid #3b3b3b;
+}
+
+#chat li {
+    padding: 10px 30px;
+}
+
+#chat h2,
+#chat h3 {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: normal;
+    color: #ffffff; /* Texto blanco */
+}
+
+#chat h3 {
+    color: #bbbbbb; /* Texto gris claro */
+}
+
+#chat .entete {
+    margin-bottom: 5px;
+}
+
+#chat .message {
+    padding: 20px;
+    color: #ffffff;
+    line-height: 25px;
+    max-width: 90%;
+    display: inline-block;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para las burbujas */
+}
+
+#chat .me {
+    text-align: right;
+}
+
+#chat .you .message {
+    background-color: #3b82f6; /* Azul para los mensajes recibidos */
+}
+
+#chat .me .message {
+    background-color: #4caf50; /* Verde para los mensajes enviados */
+}
+
+#chat .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+}
+
+#chat .you .triangle {
+    border-color: transparent transparent #3b82f6 transparent; /* Azul para el triángulo */
+    margin-left: 15px;
+}
+
+#chat .me .triangle {
+    border-color: transparent transparent #4caf50 transparent; /* Verde para el triángulo */
+    margin-left: 96%;
+}
+
+main footer {
+    height: 155px;
+    width: 90%;
+    padding: 30px;
+    background-color: #1a1a1a; /* Fondo gris oscuro */
+    border-top: 2px solid #3b3b3b;
+}
+
+main footer textarea {
+    resize: none;
+    display: block;
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid #3b82f6; /* Borde azul */
+    padding: 15px;
+    font-size: 14px;
+    margin-bottom: 13px;
+    background-color: #2d2d2d; /* Fondo gris oscuro */
+    color: #ffffff; /* Texto blanco */
+}
+
+main footer textarea::placeholder {
+    color: #bbbbbb; /* Placeholder gris claro */
+}
+
+main footer button {
+    background-color: #4caf50; /* Verde */
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+main footer button:hover {
+    transform: scale(1.1);
+    background-color: #388e3c; /* Verde más oscuro */
+}
+/* Estilo personalizado para el botón azul */
+button[mat-fab] {
+    background-color: #3b82f6 !important; /* Azul vibrante */
+    color: #ffffff !important; /* Texto o iconos en blanco */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button[mat-fab]:hover {
+    background-color: #2563eb !important; /* Azul más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Animación de zoom */
+  }
+  
+  button[mat-fab]:disabled {
+    background-color: #9ca3af !important; /* Gris claro para estado deshabilitado */
+    color: #ffffff !important;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  

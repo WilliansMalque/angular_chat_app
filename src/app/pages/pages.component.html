@@ -1,0 +1,63 @@
+<div *ngIf="authService.usuario" class="example-container">
+
+    <mat-toolbar color="primary" class="example-toolbar">
+
+        <mat-toolbar-row>
+            <button class="mr-3" mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+            <b>Sense-Sport-Chat</b>
+            <span class="example-spacer"></span>
+            <h3>{{authService.usuario.nombre}}</h3>
+            <button (click)="cerrarSesion()" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+              <mat-icon>exit_to_app</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <mat-sidenav-container class="mat-sidenav example-sidenav-container">
+        <mat-sidenav #sidenav class="sidenav" mode="side" opened="true">
+
+            <aside>
+                <header>
+                    <input type="text" (keyup)="applyFilter($event.target.value)" placeholder="Search...">
+                </header>
+                <ul>
+                    <li *ngIf="usuarios.length === 0">
+                        <h2 class="text-center text-muted">No hay contactos para mostrar</h2>
+                    </li>
+                    <li *ngFor="let usuario of usuarios" (click)="usuarioPara(usuario)">
+                        <img src="../../assets/usuario.png" alt="">
+                        <div>
+                            <h2>{{usuario.nombre}}</h2>
+                            <h3>
+                                <span class="status" [ngClass]="{'green': usuario.online, 'orange': !usuario.online}"></span> {{ usuario.online ? 'online' : 'offline'}}
+                            </h3>
+                        </div>
+                    </li>
+                </ul>
+                <footer>
+                    <h3 class="ml-1">
+                        Estado del servidor -
+                        <span [ngClass]="{'text-success': socketService.serverConnected, 'text-danger': !socketService.serverConnected}">
+                        {{socketService.serverConnected ? 'Online' : 'Offline'}}
+                      </span>
+                    </h3>
+                </footer>
+            </aside>
+
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+
+
+
+</div>
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8) " size="medium " color="#fff " type="square-jelly-box " [fullScreen]="true ">
+    <p style="color: white "> Espere un momento... </p>
+</ngx-spinner>

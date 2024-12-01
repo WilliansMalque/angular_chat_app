@@ -1,0 +1,91 @@
+<div class="container-fliud bg-login" style="height: 100vh">
+    <div class="d-flex align-items-center justify-content-center h-100">
+
+        <div class="col-md-4 mx-auto">
+            <div class="card card-login">
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+                        <div class="row justify-content-center">
+                            <img src="../../assets/tag-logo.png" width="100" alt="Logo">
+                        </div>
+                        <h2 class="text-center"><b>Sense-Sport</b></h2>
+
+                        <!-- Campo de correo -->
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Correo</mat-label>
+                            <input
+                                matInput
+                                type="email"
+                                name="correo"
+                                required
+                                [(ngModel)]="usuario.correo"
+                                pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"
+                                placeholder="Correo">
+                            <mat-error *ngIf="loginForm.submitted && loginForm.controls.correo?.errors?.required">
+                                El correo es obligatorio.
+                            </mat-error>
+                            <mat-error *ngIf="loginForm.submitted && loginForm.controls.correo?.errors?.pattern">
+                                Ingrese un correo válido.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <!-- Campo de contraseña -->
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Contraseña</mat-label>
+                            <input
+                                matInput
+                                type="password"
+                                name="password"
+                                required
+                                minlength="6"
+                                [(ngModel)]="usuario.password"
+                                placeholder="Contraseña">
+                            <mat-error *ngIf="loginForm.submitted && loginForm.controls.password?.errors?.required">
+                                La contraseña es obligatoria.
+                            </mat-error>
+                            <mat-error *ngIf="loginForm.submitted && loginForm.controls.password?.errors?.minlength">
+                                La contraseña debe tener al menos 6 caracteres.
+                            </mat-error>
+                        </mat-form-field>
+
+                        <!-- Checkbox de recordar -->
+                        <mat-checkbox color="primary" [(ngModel)]="usuario.recuerdame" name="recuerdame">
+                            Recordarme
+                        </mat-checkbox>
+
+                        <!-- Botón de ingresar -->
+                        <button
+                            class="w-100 btn-custom btn-block text-white"
+                            mat-flat-button
+                            color="primary"
+                            type="submit">
+                            <b>Ingresar</b>
+                        </button>
+
+                        <br>
+                        <div class="row justify-content-center pt-2">
+                            <h3 class="text-muted">¿No tienes una cuenta?</h3>
+                        </div>
+                        <div class="row justify-content-center">
+                            <a routerLink="/register">
+                              <h1 class="font-weight-bold">Crea una ahora!</h1>
+                            </a>
+                          </div>
+                          
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Spinner -->
+<ngx-spinner
+    bdColor="rgba(0, 0, 0, 0.8)"
+    size="medium"
+    color="#3669EB"
+    type="square-jelly-box"
+    [fullScreen]="true">
+    <p style="color: #424244">Loading...</p>
+</ngx-spinner>
